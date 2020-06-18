@@ -270,19 +270,16 @@ const Contact = ({ darkMode }) => {
 	};
 
 	const handleSubmit = async (values, actions) => {
-
-
 		let config = {
 			headers: {
-				"Access-Control-Allow-Origin": "*"
-			}
-		  }
-		  
-	
+				"Access-Control-Allow-Origin": "*",
+			},
+		};
+
 		console.log(actions);
 		handleModal();
 		actions.resetForm();
-		await axios.post("https://api.donaldyeh.dev/api/sendMail", values, config).then(
+		await axios.post("/api/sendMail", values, config).then(
 			(response) => {
 				console.log(response);
 				setModalIsOpen(true);
