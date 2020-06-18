@@ -280,7 +280,7 @@ const Contact = ({ darkMode }) => {
 		handleModal();
 		actions.resetForm();
 		await axios
-			.post("https://donaldyeh.dev/api/sendMail", values, config) //removed the .api
+			.post("https://api.donaldyeh.dev/api/sendMail", values, config) //removed the .api
 			.then(
 				(response) => {
 					console.log(response);
