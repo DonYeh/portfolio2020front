@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import {
 	makeStyles,
@@ -18,13 +18,13 @@ import avatar from "../assets/IMG_1953.jpg";
 import {
 	orange,
 	lightBlue,
-	deepPurple,
-	deepOrange,
-	greyBlue,
-	green,
-	lightGreen,
+	// deepPurple,
+	// deepOrange,
+	// greyBlue,
+	// green,
+	// lightGreen,
 	teal,
-	grey,
+	// grey,
 } from "@material-ui/core/colors";
 
 // import { FullscreenExit } from "@material-ui/icons";
@@ -226,15 +226,12 @@ const useStyles = makeStyles((theme, darkMode) => ({
 		// backgroundColor: darkMode ? "rgba(0,0,0,.3)" : "orange",
 
 		// backgroundColor:
-		padding: ".4rem",
-
 		[theme.breakpoints.up("sm")]: {},
 		[theme.breakpoints.up("md")]: {},
 	},
 	innerPaperDark: {
 		padding: ".4em",
 		backgroundColor: "rgba(37, 41, 42, 0.8)",
-		padding: ".4rem",
 
 		[theme.breakpoints.up("sm")]: {},
 		[theme.breakpoints.up("md")]: {},
@@ -257,7 +254,7 @@ const useStyles = makeStyles((theme, darkMode) => ({
 // theme = responsiveFontSizes(darkTheme);
 
 const About = ({ darkMode }) => {
-	const [aboutDarkMode, setAboutDarkMode] = useState(darkMode);
+	// const [aboutDarkMode, setAboutDarkMode] = useState(darkMode);
 
 	// const mainPrimaryColor = darkMode ? orange[500] : lightBlue[500];
 	const mainPrimaryColor = darkMode ? orange[800] : lightBlue[500];
@@ -266,29 +263,31 @@ const About = ({ darkMode }) => {
 
 	// useEffect((themeMode) => setAboutThemeMode(themeMode), [abouteMode]);
 
-	let darkTheme = createMuiTheme({
-		overrides: {
-			MuiPaper: {
-				root: {
-					backgroundColor: darkMode
-						? "rgba(0,0,0,.6)"
-						: "rgba(255,255,255,.6)",
-					//   marginBottom: '10px'
+	let darkTheme = responsiveFontSizes(
+		createMuiTheme({
+			overrides: {
+				MuiPaper: {
+					root: {
+						backgroundColor: darkMode
+							? "rgba(0,0,0,.6)"
+							: "rgba(255,255,255,.6)",
+						//   marginBottom: '10px'
+					},
 				},
 			},
-		},
-		palette: {
-			type: darkMode ? "dark" : "light",
-			primary: {
-				main: mainPrimaryColor,
+			palette: {
+				type: darkMode ? "dark" : "light",
+				primary: {
+					main: mainPrimaryColor,
+				},
+				secondary: {
+					main: mainSecondaryColor,
+				},
 			},
-			secondary: {
-				main: mainSecondaryColor,
-			},
-		},
-	});
+		})
+	);
 
-	let theme = createMuiTheme({});
+	// let theme = createMuiTheme({});
 	// let theme = createMuiTheme({
 	// 	palette: {
 	// 		type: themeMode === "light" ? "light" : "dark",

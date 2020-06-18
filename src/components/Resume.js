@@ -551,7 +551,7 @@ const useStyles = makeStyles((theme) => ({
 				borderColor: "purple",
 			},
 			"&:nth-of-type(2n):before": {
-				left: "auto",
+				// left: "auto",
 				left: ".4rem",
 				borderColor: "transparent transparent cadetblue cadetblue",
 			},
@@ -595,7 +595,7 @@ const useStyles = makeStyles((theme) => ({
 				borderColor: "purple",
 			},
 			"&:nth-of-type(2n):before": {
-				left: "auto",
+				// left: "auto",
 				left: ".4rem",
 				borderColor:
 					"transparent transparent rgba(95, 158, 160, 0.8) rgba(95, 158, 160, 0.8)",
@@ -742,8 +742,8 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-let theme = createMuiTheme();
-theme = responsiveFontSizes(theme);
+// let theme = createMuiTheme();
+// theme = responsiveFontSizes(theme);
 
 const Resume = ({ darkMode }) => {
 	const classes = useStyles();
@@ -805,7 +805,7 @@ const Resume = ({ darkMode }) => {
 									variant="contained"
 									// color="primary"
 									size="small"
-									className={classes.button}
+									// className={classes.button}
 									startIcon={<SaveIcon />}
 									className={
 										darkMode
@@ -1426,7 +1426,7 @@ const Resume = ({ darkMode }) => {
 								<Paper
 									elevation={2}
 									variant="outlined"
-									className={classes.paper}
+									// className={classes.paper}
 									className={
 										darkMode
 											? classes.paperDark

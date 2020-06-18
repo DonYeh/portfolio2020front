@@ -18,16 +18,16 @@ import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
+// import InboxIcon from "@material-ui/icons/MoveToInbox";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import MailIcon from "@material-ui/icons/Mail";
+// import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles, useTheme, StylesProvider } from "@material-ui/core/styles";
+import { makeStyles, StylesProvider } from "@material-ui/core/styles";
 
 import {
 	createMuiTheme,
@@ -35,7 +35,7 @@ import {
 	responsiveFontSizes,
 } from "@material-ui/core/styles";
 
-import { Paper, Grid } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
@@ -54,21 +54,21 @@ import AssignmentIndTwoToneIcon from "@material-ui/icons/AssignmentIndTwoTone";
 import AppsTwoToneIcon from "@material-ui/icons/AppsTwoTone";
 import ContactMailTwoToneIcon from "@material-ui/icons/ContactMailTwoTone";
 
-import { Brightness2 } from "@material-ui/icons";
+// import { Brightness2 } from "@material-ui/icons";
 import { Brightness7 } from "@material-ui/icons";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 // import Overlay from "./components/Overlay";
 
-import {
-	orange,
-	lightBlue,
-	deepPurple,
-	deepOrange,
-	grey,
-	blueGrey,
-	green,
-	teal,
-} from "@material-ui/core/colors";
+// import {
+// 	orange,
+// 	lightBlue,
+// 	deepPurple,
+// 	deepOrange,
+// 	grey,
+// 	blueGrey,
+// 	green,
+// 	teal,
+// } from "@material-ui/core/colors";
 
 // import HomePage2 from "./components/HomePage2";
 
@@ -110,15 +110,7 @@ const useStyles = makeStyles((theme) => ({
 	list: {
 		width: 240,
 	},
-	drawer: {
-		[theme.breakpoints.up("sm")]: {
-			// width: "100vw",
-			flexShrink: 1,
-		},
-	},
-	// toolbar: {
-	// 	display: "flex",
-	// },
+
 	appBar: {
 		[theme.breakpoints.up("sm")]: {
 			width: "100%",
@@ -168,6 +160,10 @@ const useStyles = makeStyles((theme) => ({
 	drawer: {
 		width: drawerWidth,
 		flexShrink: 0,
+		[theme.breakpoints.up("sm")]: {
+			// width: "100vw",
+			flexShrink: 1,
+		},
 	},
 	drawerHeader: {
 		display: "flex",
@@ -267,39 +263,41 @@ function App(props) {
 	// });
 
 	// const mainPrimaryColor = darkMode ? orange[500] : lightBlue[500];
-	const mainPrimaryColor = darkMode ? grey[900] : orange[300];
+	// const mainPrimaryColor = darkMode ? grey[900] : orange[300];
 	// const mainPrimaryColor = darkMode ? black : white;
 	// const mainSecondaryColor = darkMode ? deepOrange[900] : deepPurple[500];
-	const mainSecondaryColor = darkMode ? orange[700] : orange[800];
+	// const mainSecondaryColor = darkMode ? orange[700] : orange[800];
 
-	let darkTheme = createMuiTheme({
-		overrides: {
-			MuiPaper: {
-				root: {
-					backgroundColor: darkMode
-						? "rgba(0,0,0,.6)"
-						: "rgba(255,255,255,.6)",
-					//   marginBottom: '10px'
+	let darkTheme = responsiveFontSizes(
+		createMuiTheme({
+			overrides: {
+				MuiPaper: {
+					root: {
+						backgroundColor: darkMode
+							? "rgba(0,0,0,.6)"
+							: "rgba(255,255,255,.6)",
+						//   marginBottom: '10px'
+					},
+				},
+				MuiAppBar: {
+					colorPrimary: {
+						backgroundColor: darkMode
+							? "rgba(38, 41, 42, 0.9)"
+							: "rgba(204, 216, 219, 0.9)",
+					},
 				},
 			},
-			MuiAppBar: {
-				colorPrimary: {
-					backgroundColor: darkMode
-						? "rgba(38, 41, 42, 0.9)"
-						: "rgba(204, 216, 219, 0.9)",
-				},
+			palette: {
+				type: darkMode ? "dark" : "light",
+				// primary: {
+				// 	main: mainPrimaryColor,
+				// },
+				// secondary: {
+				// 	main: mainSecondaryColor,
+				// },
 			},
-		},
-		palette: {
-			type: darkMode ? "dark" : "light",
-			// primary: {
-			// 	main: mainPrimaryColor,
-			// },
-			// secondary: {
-			// 	main: mainSecondaryColor,
-			// },
-		},
-	});
+		})
+	);
 
 	const handleDrawerToggle = () => {
 		setMobileOpen(!mobileOpen);
@@ -342,7 +340,7 @@ function App(props) {
 			<Divider />
 			<List>
 				{menuIcons.map((menuIcon, key) => (
-					<Link to={menuIcon.listPath} underline="hover">
+					<Link key={key} to={menuIcon.listPath} underline="hover">
 						<ListItem button key={key} onClick={handleDrawerToggle}>
 							<ListItemIcon
 								style={{

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
 	makeStyles,
 	ThemeProvider,
@@ -16,11 +16,10 @@ import {
 	Box,
 	Paper,
 	Grid,
-	Avatar,
 	Card,
-	CssBaseline,
+	// CssBaseline,
 } from "@material-ui/core";
-import { FullscreenExit } from "@material-ui/icons";
+// import { FullscreenExit } from "@material-ui/icons";
 
 import portfolioImg from "../assets/donaldyehportoflioheader.png";
 
@@ -29,12 +28,12 @@ import movieExplorerGif from "../assets/newMovieGIFedited.gif";
 
 import {
 	orange,
-	lightBlue,
-	deepPurple,
-	deepOrange,
-	greyBlue,
-	green,
-	lightGreen,
+	// lightBlue,
+	// deepPurple,
+	// deepOrange,
+	// greyBlue,
+	// green,
+	// lightGreen,
 	teal,
 	grey,
 } from "@material-ui/core/colors";
@@ -130,9 +129,9 @@ const useStyles = makeStyles((theme) => ({
 // 	},
 // });
 
-let theme = createMuiTheme();
-// theme = responsiveFontSizes(darkTheme);
-theme = responsiveFontSizes(theme);
+// et theme = createMuiTheme();
+// // theme = responsiveFontSizes(darkTheme);
+// theme = responsiveFontSizes(theme);l
 
 export default function Portfolio({ darkMode }) {
 	const classes = useStyles();
@@ -202,7 +201,6 @@ export default function Portfolio({ darkMode }) {
 												src={portfolioImg}
 												title="donaldyeh.dev"
 												className="classes.media"
-												component="img"
 											/>
 											<CardContent
 												className={

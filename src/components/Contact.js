@@ -221,8 +221,8 @@ const validationSchema = Yup.object().shape({
 		),
 });
 
-let theme = createMuiTheme();
-theme = responsiveFontSizes(theme);
+// let theme = createMuiTheme();
+// theme = responsiveFontSizes(theme);
 
 const Contact = ({ darkMode }) => {
 	const classes = useStyles();
@@ -232,34 +232,36 @@ const Contact = ({ darkMode }) => {
 	// const mainSecondaryColor = darkMode ? deepOrange[900] : deepPurple[500];
 	const mainSecondaryColor = darkMode ? orange[700] : teal[800];
 
-	let darkTheme = createMuiTheme({
-		overrides: {
-			MuiPaper: {
-				root: {
-					backgroundColor: darkMode
-						? "rgba(0,0,0,.6)"
-						: "rgba(255,255,255,.6)",
+	let darkTheme = responsiveFontSizes(
+		createMuiTheme({
+			overrides: {
+				MuiPaper: {
+					root: {
+						backgroundColor: darkMode
+							? "rgba(0,0,0,.6)"
+							: "rgba(255,255,255,.6)",
+					},
 				},
 			},
-		},
-		palette: {
-			type: darkMode ? "dark" : "light",
-			primary: {
-				main: mainPrimaryColor,
+			palette: {
+				type: darkMode ? "dark" : "light",
+				primary: {
+					main: mainPrimaryColor,
+				},
+				secondary: {
+					main: mainSecondaryColor,
+				},
 			},
-			secondary: {
-				main: mainSecondaryColor,
-			},
-		},
-	});
+		})
+	);
 
-	const handleOpen = () => {
-		setModalIsOpen(true);
-	};
+	// const handleOpen = () => {
+	// 	setModalIsOpen(true);
+	// };
 
-	const handleClose = () => {
-		setModalIsOpen(false);
-	};
+	// const handleClose = () => {
+	// 	setModalIsOpen(false);
+	// };
 
 	const handleModal = () => {
 		setTimeout(() => {
@@ -271,19 +273,17 @@ const Contact = ({ darkMode }) => {
 		console.log(actions);
 		handleModal();
 		actions.resetForm();
-		let res = await axios
-			.post("api.donaldyeh.dev/api/sendMail", values)
-			.then(
-				(response) => {
-					console.log(response);
-					setModalIsOpen(true);
-					actions.setSubmitting(false);
-				},
+		await axios.post("api.donaldyeh.dev/api/sendMail", values).then(
+			(response) => {
+				console.log(response);
+				setModalIsOpen(true);
+				actions.setSubmitting(false);
+			},
 
-				(error) => {
-					console.log(error);
-				}
-			);
+			(error) => {
+				console.log(error);
+			}
+		);
 	};
 
 	return (

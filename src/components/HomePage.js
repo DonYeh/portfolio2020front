@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
 	Typography,
 	Grid,
-	CssBaseline,
+	// CssBaseline,
 	ThemeProvider,
-	StylesProvider,
+	// StylesProvider,
 } from "@material-ui/core/";
 // import avatar from "../images/Boone.png";
 import Typed from "react-typed";
 import {
 	makeStyles,
-	MuiThemeProvider,
 	createMuiTheme,
 	responsiveFontSizes,
 } from "@material-ui/core/styles";
@@ -117,12 +116,12 @@ const useStyles = makeStyles((theme) => ({
 const HomePage = ({ darkMode }) => {
 	const classes = useStyles();
 
-	const [homeDarkMode, setAboutDarkMode] = useState(darkMode);
+	// const [homeDarkMode, setAboutDarkMode] = useState(darkMode);
 
 	const mainPrimaryColor = darkMode ? orange[500] : lightBlue[500];
 	const mainSecondaryColor = darkMode ? deepOrange[900] : deepPurple[500];
 
-	useEffect((darkMode) => setAboutDarkMode(darkMode), [darkMode]);
+	// useEffect((darkMode) => setAboutDarkMode(darkMode), [darkMode]);
 
 	let darkTheme = responsiveFontSizes(
 		createMuiTheme({
@@ -149,7 +148,7 @@ const HomePage = ({ darkMode }) => {
 		})
 	);
 
-	let theme = createMuiTheme({});
+	// let theme = createMuiTheme({});
 
 	return (
 		<ThemeProvider theme={darkTheme}>
@@ -248,7 +247,7 @@ const HomePage = ({ darkMode }) => {
 									typeSpeed={14}
 									startDelay={5400}
 									backSpeed={22}
-									smartBackspace="true"
+									smartBackspace
 									random
 									loop
 									showCursor={false}
@@ -310,10 +309,10 @@ const HomePage = ({ darkMode }) => {
 									startDelay={7000}
 									backSpeed={15}
 									backDelay={250}
-									smartBackspace="true"
+									smartBackspace
 									cursorChar={" ‎‎‎‎      "}
 									showCursor={true}
-									fadeOut="true"
+									fadeOut
 									loop
 									random
 									// smartBackspace="true"
