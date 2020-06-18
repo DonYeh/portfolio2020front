@@ -273,22 +273,17 @@ const Contact = ({ darkMode }) => {
 		console.log(actions);
 		handleModal();
 		actions.resetForm();
-		await axios
-			.post(
-				"https://cors-anywhere.herokuapp.com/https://api.donaldyeh.dev/api/sendMail",
-				values
-			)
-			.then(
-				(response) => {
-					console.log(response);
-					setModalIsOpen(true);
-					actions.setSubmitting(false);
-				},
+		await axios.post("https://api.donaldyeh.dev/api/sendMail", values).then(
+			(response) => {
+				console.log(response);
+				setModalIsOpen(true);
+				actions.setSubmitting(false);
+			},
 
-				(error) => {
-					console.log(error);
-				}
-			);
+			(error) => {
+				console.log(error);
+			}
+		);
 	};
 
 	return (
