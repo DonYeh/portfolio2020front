@@ -273,7 +273,7 @@ const Contact = ({ darkMode }) => {
 		console.log(actions);
 		handleModal();
 		actions.resetForm();
-		await axios.post("api.donaldyeh.dev/api/sendMail", values).then(
+		await axios.post("https://api.donaldyeh.dev/api/sendMail", values).then(
 			(response) => {
 				console.log(response);
 				setModalIsOpen(true);
