@@ -340,35 +340,39 @@ function App(props) {
 			<Divider />
 			<List>
 				{menuIcons.map((menuIcon, key) => (
-					<Link key={key} to={menuIcon.listPath} underline="hover">
-						<ListItem button key={key} onClick={handleDrawerToggle}>
-							<ListItemIcon
-								style={{
-									// color: "#5f9ea0c7",
-									color: darkMode
-										? "rgba(137, 136, 136, 0.5)"
-										: // : "rgba(102, 102, 102, 0.8)",
-										  "rgba(226, 120, 10, 0.8)",
+					<ListItem
+						button
+						key={key}
+						component={Link}
+						to={menuIcon.listPath}
+						onClick={handleDrawerToggle}
+					>
+						<ListItemIcon
+							style={{
+								// color: "#5f9ea0c7",
+								color: darkMode
+									? "rgba(137, 136, 136, 0.5)"
+									: // : "rgba(102, 102, 102, 0.8)",
+									  "rgba(226, 120, 10, 0.8)",
 
-									paddingLeft: "6px",
-								}}
-							>
-								{menuIcon.listIcon}
-							</ListItemIcon>
-							<ListItemText
-								primary={menuIcon.listText}
-								style={{
-									color: darkMode
-										? // ? "rgba(137, 136, 136, 0.98)"
-										  "rgba(255, 153, 49, 0.8)"
-										: "rgba(60, 60, 60, 0.85)",
-									// color: "aliceblue",
-									fontWeight: "bold",
-									textDecoration: "none",
-								}}
-							/>
-						</ListItem>
-					</Link>
+								paddingLeft: "6px",
+							}}
+						>
+							{menuIcon.listIcon}
+						</ListItemIcon>
+						<ListItemText
+							primary={menuIcon.listText}
+							style={{
+								color: darkMode
+									? // ? "rgba(137, 136, 136, 0.98)"
+									  "rgba(255, 153, 49, 0.8)"
+									: "rgba(60, 60, 60, 0.85)",
+								// color: "aliceblue",
+								fontWeight: "bold",
+								textDecoration: "none",
+							}}
+						/>
+					</ListItem>
 				))}
 			</List>
 		</div>
