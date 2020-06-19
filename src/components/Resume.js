@@ -33,10 +33,26 @@ import {
 } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
+	paperOverlay: { background: "rgba(222, 236, 240, 0.9)" },
+	paperOverlayDark: { background: "rgba(24, 26, 27, 0.9)" },
+
 	mainContainer: {
-		background: "#234darkMode ? classes.headingDark : ",
+		background: "rgba(255,255,255,.5)",
+	},
+
+	mainContainerDark: {
+		background: "rgba(0,0,0,.5)",
 	},
 	mainResumePaper: {
+		// backgroundColor: "rgba(255,255,255,.4)",
+
+		margin: "1.0vw 5vw 0vw",
+		[theme.breakpoints.up("sm")]: { margin: "1.0vw 10vw 0vw" },
+		[theme.breakpoints.up("md")]: {},
+	},
+	mainResumePaperDark: {
+		// backgroundColor: "rgba(0,0,0,.4)",
+
 		margin: "1.0vw 5vw 0vw",
 		[theme.breakpoints.up("sm")]: { margin: "1.0vw 10vw 0vw" },
 		[theme.breakpoints.up("md")]: {},
@@ -167,7 +183,7 @@ const useStyles = makeStyles((theme) => ({
 			position: "absolute",
 			height: "25.6%",
 			border: "1px solid rgba(82, 84, 84, 0.7)",
-			right: "4vw",
+			right: "8.2vw",
 
 			transform: "translate(0rem, 3.2rem)",
 		},
@@ -206,7 +222,7 @@ const useStyles = makeStyles((theme) => ({
 			height: "25.6%",
 
 			border: "1px solid lightgrey ",
-			right: "4vw",
+			right: "8.2vw",
 
 			transform: "translate(0rem, 3.2rem)",
 		},
@@ -782,780 +798,106 @@ const Resume = ({ darkMode }) => {
 	return (
 		<ThemeProvider theme={darkTheme}>
 			<CssBaseline />
-			<Paper className={classes.mainResumePaper}>
-				<Grid
-					container
-					justify="center"
-					className={classes.mainContainer}
+			<Paper
+				className={
+					darkMode ? classes.paperOverlayDark : classes.paperOverlay
+				}
+			>
+				<Paper
+					className={
+						classes.mainResumePaper
+						// darkMode
+						// 	? classes.mainResumePaperDark
+						// 	: classes.mainResumePaper
+					}
 				>
 					<Grid
-						item
 						container
+						justify="center"
 						className={
 							darkMode
-								? classes.downloadResumeDark
-								: classes.downloadResume
-						}
-						justify="center"
-						alignContent="flex-end"
-					>
-						<Grid item style={{ paddingBottom: ".5rem" }}>
-							<Link
-								href="https://drive.google.com/open?id=1o9VgNvrVhskDqi76UCsFQiByLeDUv0BZ"
-								// onClick={preventDefault}
-							>
-								<Button
-									variant="contained"
-									// color="primary"
-									size="small"
-									// className={classes.button}
-									startIcon={<SaveIcon />}
-									className={
-										darkMode
-											? classes.downloadResumeButtonDark
-											: classes.downloadResumeButton
-									}
-								>
-									Download resume
-								</Button>
-							</Link>
-						</Grid>
-					</Grid>
-
-					<Grid
-						item
-						container
-						className={classes.timeLineBox}
-						style={{
-							backgroundColor: darkMode
-								? "rgba(36, 41, 41, 0.9)"
-								: "rgba(208, 219, 222, 0.9)",
-						}}
-					>
-						<Grid item xs={12}>
-							<Typography
-								variant="h4"
-								align="center"
-								className={
-									darkMode
-										? classes.headingDark
-										: classes.heading
-								}
-								style={{
-									color: darkMode
-										? "rgba(244, 164, 96, 0.8)"
-										: "rgba(4, 78, 80, 0.8)",
-								}}
-							>
-								Education
-							</Typography>
-							<Typography
-								variant="h6"
-								className={
-									darkMode
-										? `${classes.timeLineYearDark} ${classes.timeLineItemDark}`
-										: `${classes.timeLineYear} ${classes.timeLineItem}`
-								}
-							>
-								2019
-							</Typography>
-
-							<Box
-								component="div"
-								className={
-									darkMode
-										? classes.timeLineItemDark
-										: classes.timeLineItem
-								}
-							>
-								<Typography
-									variant="h5"
-									align="center"
-									className={
-										darkMode
-											? classes.subHeadingDark
-											: classes.subHeading
-									}
-								>
-									Digital Crafts
-								</Typography>
-								<Typography
-									variant="h6"
-									align="center"
-									className={
-										darkMode
-											? classes.subHeading2Dark
-											: classes.subHeading2
-									}
-								>
-									Web Development Bootcamp
-								</Typography>
-								<Typography
-									variant="body1"
-									align="center"
-									className={
-										darkMode
-											? classes.locationDark
-											: classes.location
-									}
-								>
-									Atlanta, GA
-								</Typography>
-
-								<Typography
-									variant="subtitle1"
-									align="center"
-									className={
-										darkMode
-											? classes.eduDescDark
-											: classes.eduDesc
-									}
-								>
-									Certificate in Full Stack software
-									development
-								</Typography>
-							</Box>
-							<Typography
-								variant="h6"
-								className={
-									darkMode
-										? `${classes.timeLineYearDark} ${classes.timeLineItemDark}`
-										: `${classes.timeLineYear} ${classes.timeLineItem}`
-								}
-							>
-								2013
-							</Typography>
-							<Box
-								component="div"
-								className={classes.timeLineItem}
-							>
-								<Typography
-									variant="h5"
-									align="center"
-									className={
-										darkMode
-											? classes.subHeadingDark
-											: classes.subHeading
-									}
-								>
-									Georgia Institute of Technology
-								</Typography>
-								<Typography
-									variant="h6"
-									align="center"
-									className={
-										darkMode
-											? classes.subHeading2Dark
-											: classes.subHeading2
-									}
-								>
-									Scheller College of Business
-								</Typography>
-								<Typography
-									variant="body1"
-									align="center"
-									className={
-										darkMode
-											? classes.locationDark
-											: classes.location
-									}
-								>
-									Atlanta, GA
-								</Typography>
-								<Typography
-									variant="subtitle1"
-									align="center"
-									className={
-										darkMode
-											? classes.eduDescDark
-											: classes.eduDesc
-									}
-								>
-									Master of Business Administration
-								</Typography>
-							</Box>
-							<Typography
-								variant="h6"
-								className={
-									darkMode
-										? `${classes.timeLineYearDark} ${classes.timeLineItemDark}`
-										: `${classes.timeLineYear} ${classes.timeLineItem}`
-								}
-							>
-								2007
-							</Typography>
-							<Box
-								component="div"
-								className={classes.timeLineItem}
-							>
-								<Typography
-									variant="h5"
-									align="center"
-									className={
-										darkMode
-											? classes.subHeadingDark
-											: classes.subHeading
-									}
-								>
-									Georgia Institute of Technology
-								</Typography>
-
-								<Typography
-									variant="h6"
-									align="center"
-									className={
-										darkMode
-											? classes.subHeading2Dark
-											: classes.subHeading2
-									}
-								>
-									School of Electrical and Computer
-									Engineering
-								</Typography>
-
-								<Typography
-									variant="body1"
-									align="center"
-									className={
-										darkMode
-											? classes.locationDark
-											: classes.location
-									}
-								>
-									Atlanta, GA
-								</Typography>
-
-								<Typography
-									variant="subtitle1"
-									align="center"
-									className={
-										darkMode
-											? classes.eduDescDark
-											: classes.eduDesc
-									}
-								>
-									Bachelor of Science in Electrical
-									Engineering
-								</Typography>
-							</Box>
-						</Grid>
-					</Grid>
-
-					<Grid
-						item
-						container
-						spacing={2}
-						justify="center"
-						// alignItems="self-end"
-						className={
-							darkMode
-								? classes.boxTechnologiesDark
-								: classes.boxTechnologies
+								? classes.mainContainerDark
+								: classes.mainContainer
 						}
 					>
-						<Grid item container justify="center">
+						<Grid
+							item
+							container
+							className={
+								darkMode
+									? classes.downloadResumeDark
+									: classes.downloadResume
+							}
+							justify="center"
+							alignContent="flex-end"
+						>
+							<Grid item style={{ paddingBottom: ".5rem" }}>
+								<Link
+									href="https://drive.google.com/open?id=1o9VgNvrVhskDqi76UCsFQiByLeDUv0BZ"
+									// onClick={preventDefault}
+								>
+									<Button
+										variant="contained"
+										// color="primary"
+										size="small"
+										// className={classes.button}
+										startIcon={<SaveIcon />}
+										className={
+											darkMode
+												? classes.downloadResumeButtonDark
+												: classes.downloadResumeButton
+										}
+									>
+										Download resume
+									</Button>
+								</Link>
+							</Grid>
+						</Grid>
+
+						<Grid
+							item
+							container
+							className={classes.timeLineBox}
+							style={{
+								backgroundColor: darkMode
+									? "rgba(36, 41, 41, 0.9)"
+									: "rgba(208, 219, 222, 0.9)",
+							}}
+						>
 							<Grid item xs={12}>
 								<Typography
 									variant="h4"
 									align="center"
 									className={
 										darkMode
-											? classes.heading2TitleDark
-											: classes.heading2Title
+											? classes.headingDark
+											: classes.heading
 									}
+									style={{
+										color: darkMode
+											? "rgba(244, 164, 96, 0.8)"
+											: "rgba(4, 78, 80, 0.8)",
+									}}
 								>
-									Technologies
+									Education
 								</Typography>
-							</Grid>
-						</Grid>
-						<Grid
-							item
-							justify="center"
-							container
-							xs={12}
-							sm={6}
-							md={4}
-							spacing={1}
-							className={classes.frontEndGridItem}
-						>
-							<Grid item xs={12}>
-								<Typography
-									align="center"
-									className={
-										darkMode
-											? classes.techFEDark
-											: classes.techFE
-									}
-								>
-									Front End
-								</Typography>
-							</Grid>
-							<Grid
-								item
-								xs={4}
-								sm={4}
-								md={4}
-								style={{
-									color: darkMode
-										? "rgba(255,255,255,.4)"
-										: "rgba(0,0,0,.5)",
-								}}
-							>
-								<Paper
-									elevation={3}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									HTML5
-								</Paper>
-							</Grid>
-							<Grid
-								item
-								xs={4}
-								sm={4}
-								md={4}
-								className={classes.technologyGridItems}
-							>
-								<Paper
-									elevation={3}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									CSS3
-								</Paper>
-							</Grid>
-							<Grid
-								item
-								xs={4}
-								sm={4}
-								md={4}
-								className={classes.technologyGridItems}
-							>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									Javascript
-								</Paper>
-							</Grid>
-							<Grid
-								item
-								xs={4}
-								sm={4}
-								md={4}
-								className={classes.technologyGridItems}
-							>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									Typescript
-								</Paper>
-							</Grid>
-							<Grid
-								item
-								xs={4}
-								sm={4}
-								md={4}
-								className={classes.technologyGridItems}
-							>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									React
-								</Paper>
-							</Grid>
-							<Grid
-								item
-								xs={4}
-								sm={4}
-								md={4}
-								className={classes.technologyGridItems}
-							>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									Material-UI
-								</Paper>
-							</Grid>
-							<Grid
-								item
-								xs={4}
-								sm={4}
-								md={4}
-								className={classes.technologyGridItems}
-							>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									Angular
-								</Paper>
-							</Grid>
-							<Grid
-								item
-								xs={4}
-								sm={4}
-								md={4}
-								className={classes.technologyGridItems}
-							>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									React Native
-								</Paper>
-							</Grid>
-						</Grid>
-
-						<Grid
-							item
-							xs={12}
-							sm={6}
-							md={4}
-							container
-							spacing={1}
-							justify="center"
-							className={classes.backEndGridItem}
-						>
-							<Grid item xs={12}>
-								<Typography
-									align="center"
-									className={
-										darkMode
-											? classes.techFEDark
-											: classes.techFE
-									}
-								>
-									Back End
-								</Typography>
-							</Grid>
-
-							<Grid item xs={4} sm={4} md={4}>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									<div>Node</div>
-								</Paper>
-							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									<div>Express</div>
-								</Paper>
-							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									Python
-								</Paper>
-							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									PostgreSQL
-								</Paper>
-							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									SQL
-								</Paper>
-							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									GraphQL
-								</Paper>
-							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									WebSockets
-								</Paper>
-							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									NGINX
-								</Paper>
-							</Grid>
-						</Grid>
-						<Grid
-							item
-							xs={12}
-							sm={6}
-							md={4}
-							container
-							justify="center"
-							spacing={1}
-							className={classes.toolsGridItem}
-						>
-							<Grid item xs={12}>
-								<Typography
-									align="center"
-									className={
-										darkMode
-											? classes.techFEDark
-											: classes.techFE
-									}
-								>
-									Tools
-								</Typography>
-							</Grid>
-
-							<Grid item xs={4} sm={4} md={4}>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									VS Code
-								</Paper>
-							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									AWS
-								</Paper>
-							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									// className={classes.paper}
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									NPM
-								</Paper>
-							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									Git
-								</Paper>
-							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									GitHub
-								</Paper>
-							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									Jasmine
-								</Paper>
-							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									Mocha
-								</Paper>
-							</Grid>
-							<Grid item xs={4} sm={4} md={4}>
-								<Paper
-									elevation={2}
-									variant="outlined"
-									className={
-										darkMode
-											? classes.paperDark
-											: classes.paper
-									}
-								>
-									Webpack
-								</Paper>
-							</Grid>
-						</Grid>
-					</Grid>
-
-					<Grid
-						item
-						container
-						className={
-							darkMode
-								? classes.experienceBoxDark
-								: classes.experienceBox
-						}
-						justify="center"
-					>
-						<Grid item container justify="center">
-							<Grid item>
-								<Typography
-									variant="h4"
-									align="center"
-									className={
-										darkMode
-											? classes.experienceTitleDark
-											: classes.experienceTitle
-									}
-								>
-									Experience
-								</Typography>
-							</Grid>
-
-							<Grid
-								item
-								className={
-									darkMode
-										? classes.timeLineBoxEDark
-										: classes.timeLineBoxE
-								}
-							>
 								<Typography
 									variant="h6"
 									className={
 										darkMode
-											? `${classes.timeLineYearEDark} ${classes.timeLineItemEDark}`
-											: `${classes.timeLineYearE} ${classes.timeLineItemE}`
+											? `${classes.timeLineYearDark} ${classes.timeLineItemDark}`
+											: `${classes.timeLineYear} ${classes.timeLineItem}`
 									}
 								>
-									2020
+									2019
 								</Typography>
+
 								<Box
 									component="div"
 									className={
 										darkMode
-											? classes.timeLineItemEDark
-											: classes.timeLineItemE
+											? classes.timeLineItemDark
+											: classes.timeLineItem
 									}
 								>
 									<Typography
@@ -1563,30 +905,30 @@ const Resume = ({ darkMode }) => {
 										align="center"
 										className={
 											darkMode
-												? classes.subHeadingEDark
-												: classes.subHeadingE
+												? classes.subHeadingDark
+												: classes.subHeading
 										}
 									>
-										Ton Ton Ramen & Yakitori
+										Digital Crafts
 									</Typography>
 									<Typography
 										variant="h6"
 										align="center"
 										className={
 											darkMode
-												? classes.subHeading2EDark
-												: classes.subHeading2E
+												? classes.subHeading2Dark
+												: classes.subHeading2
 										}
 									>
-										Server
+										Web Development Bootcamp
 									</Typography>
 									<Typography
 										variant="body1"
 										align="center"
 										className={
 											darkMode
-												? classes.locationEDark
-												: classes.locationE
+												? classes.locationDark
+												: classes.location
 										}
 									>
 										Atlanta, GA
@@ -1594,71 +936,122 @@ const Resume = ({ darkMode }) => {
 
 									<Typography
 										variant="subtitle1"
-										align="left"
+										align="center"
 										className={
 											darkMode
-												? classes.jobDescriptionDark
-												: classes.jobDescription
+												? classes.eduDescDark
+												: classes.eduDesc
 										}
 									>
-										<div>
-											• Filled in as manager when needed -
-											responsibilities included resolving
-											customer issues, entering shift
-											reports, and taking inventory
-										</div>
-										<div>
-											• Developed valuable soft skills,
-											which included communication,
-											teamwork, multitasking, and working
-											under pressure
-										</div>
-										<div>
-											• Trained new hires and created
-											training materials along with a
-											checklist of server side-duties
-										</div>
+										Certificate in Full Stack software
+										development
 									</Typography>
 								</Box>
 								<Typography
 									variant="h6"
-									className={`${classes.timeLineYearE} ${classes.timeLineItemE}`}
+									className={
+										darkMode
+											? `${classes.timeLineYearDark} ${classes.timeLineItemDark}`
+											: `${classes.timeLineYear} ${classes.timeLineItem}`
+									}
 								>
-									2018
+									2013
 								</Typography>
 								<Box
 									component="div"
-									className={classes.timeLineItemE}
+									className={classes.timeLineItem}
 								>
 									<Typography
 										variant="h5"
 										align="center"
 										className={
 											darkMode
-												? classes.subHeadingEDark
-												: classes.subHeadingE
+												? classes.subHeadingDark
+												: classes.subHeading
 										}
 									>
-										Elev8 Hire Solutions{" "}
+										Georgia Institute of Technology
 									</Typography>
 									<Typography
 										variant="h6"
 										align="center"
 										className={
 											darkMode
-												? classes.subHeading2EDark
-												: classes.subHeading2E
+												? classes.subHeading2Dark
+												: classes.subHeading2
 										}
 									>
-										IT Recruiter
+										Scheller College of Business
 									</Typography>
 									<Typography
 										variant="body1"
 										align="center"
 										className={
 											darkMode
-												? classes.locationEDark
-												: classes.locationE
+												? classes.locationDark
+												: classes.location
+										}
+									>
+										Atlanta, GA
+									</Typography>
+									<Typography
+										variant="subtitle1"
+										align="center"
+										className={
+											darkMode
+												? classes.eduDescDark
+												: classes.eduDesc
+										}
+									>
+										Master of Business Administration
+									</Typography>
+								</Box>
+								<Typography
+									variant="h6"
+									className={
+										darkMode
+											? `${classes.timeLineYearDark} ${classes.timeLineItemDark}`
+											: `${classes.timeLineYear} ${classes.timeLineItem}`
+									}
+								>
+									2007
+								</Typography>
+								<Box
+									component="div"
+									className={classes.timeLineItem}
+								>
+									<Typography
+										variant="h5"
+										align="center"
+										className={
+											darkMode
+												? classes.subHeadingDark
+												: classes.subHeading
+										}
+									>
+										Georgia Institute of Technology
+									</Typography>
+
+									<Typography
+										variant="h6"
+										align="center"
+										className={
+											darkMode
+												? classes.subHeading2Dark
+												: classes.subHeading2
+										}
+									>
+										School of Electrical and Computer
+										Engineering
+									</Typography>
+
+									<Typography
+										variant="body1"
+										align="center"
+										className={
+											darkMode
+												? classes.locationDark
+												: classes.location
 										}
 									>
 										Atlanta, GA
@@ -1666,36 +1059,679 @@ const Resume = ({ darkMode }) => {
 
 									<Typography
 										variant="subtitle1"
-										align="left"
+										align="center"
 										className={
 											darkMode
-												? classes.jobDescriptionDark
-												: classes.jobDescription
+												? classes.eduDescDark
+												: classes.eduDesc
 										}
 									>
-										<div>
-											• Performed full sles recruiting
-											lifecycle - from prospecting, job
-											selling, screening, offer
-											negotiation, and onboarding
-										</div>
-										<div>
-											• Communicated with hiring managers
-											to discover project requirements and
-											ideal candidates
-										</div>
-										<div>
-											• Maintained an accurate candidate
-											tracking system
-										</div>
+										Bachelor of Science in Electrical
+										Engineering
 									</Typography>
 								</Box>
 							</Grid>
+						</Grid>
+
+						<Grid
+							item
+							container
+							spacing={2}
+							justify="center"
+							// alignItems="self-end"
+							className={
+								darkMode
+									? classes.boxTechnologiesDark
+									: classes.boxTechnologies
+							}
+						>
+							<Grid item container justify="center">
+								<Grid item xs={12}>
+									<Typography
+										variant="h4"
+										align="center"
+										className={
+											darkMode
+												? classes.heading2TitleDark
+												: classes.heading2Title
+										}
+									>
+										Technologies
+									</Typography>
+								</Grid>
+							</Grid>
+							<Grid
+								item
+								justify="center"
+								container
+								xs={12}
+								sm={6}
+								md={4}
+								spacing={1}
+								className={classes.frontEndGridItem}
+							>
+								<Grid item xs={12}>
+									<Typography
+										align="center"
+										className={
+											darkMode
+												? classes.techFEDark
+												: classes.techFE
+										}
+									>
+										Front End
+									</Typography>
+								</Grid>
+								<Grid
+									item
+									xs={4}
+									sm={4}
+									md={4}
+									style={{
+										color: darkMode
+											? "rgba(255,255,255,.4)"
+											: "rgba(0,0,0,.5)",
+									}}
+								>
+									<Paper
+										elevation={3}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										HTML5
+									</Paper>
+								</Grid>
+								<Grid
+									item
+									xs={4}
+									sm={4}
+									md={4}
+									className={classes.technologyGridItems}
+								>
+									<Paper
+										elevation={3}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										CSS3
+									</Paper>
+								</Grid>
+								<Grid
+									item
+									xs={4}
+									sm={4}
+									md={4}
+									className={classes.technologyGridItems}
+								>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										Javascript
+									</Paper>
+								</Grid>
+								<Grid
+									item
+									xs={4}
+									sm={4}
+									md={4}
+									className={classes.technologyGridItems}
+								>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										Typescript
+									</Paper>
+								</Grid>
+								<Grid
+									item
+									xs={4}
+									sm={4}
+									md={4}
+									className={classes.technologyGridItems}
+								>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										React
+									</Paper>
+								</Grid>
+								<Grid
+									item
+									xs={4}
+									sm={4}
+									md={4}
+									className={classes.technologyGridItems}
+								>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										Material-UI
+									</Paper>
+								</Grid>
+								<Grid
+									item
+									xs={4}
+									sm={4}
+									md={4}
+									className={classes.technologyGridItems}
+								>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										Angular
+									</Paper>
+								</Grid>
+								<Grid
+									item
+									xs={4}
+									sm={4}
+									md={4}
+									className={classes.technologyGridItems}
+								>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										React Native
+									</Paper>
+								</Grid>
+							</Grid>
+
+							<Grid
+								item
+								xs={12}
+								sm={6}
+								md={4}
+								container
+								spacing={1}
+								justify="center"
+								className={classes.backEndGridItem}
+							>
+								<Grid item xs={12}>
+									<Typography
+										align="center"
+										className={
+											darkMode
+												? classes.techFEDark
+												: classes.techFE
+										}
+									>
+										Back End
+									</Typography>
+								</Grid>
+
+								<Grid item xs={4} sm={4} md={4}>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										<div>Node</div>
+									</Paper>
+								</Grid>
+								<Grid item xs={4} sm={4} md={4}>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										<div>Express</div>
+									</Paper>
+								</Grid>
+								<Grid item xs={4} sm={4} md={4}>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										Python
+									</Paper>
+								</Grid>
+								<Grid item xs={4} sm={4} md={4}>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										PostgreSQL
+									</Paper>
+								</Grid>
+								<Grid item xs={4} sm={4} md={4}>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										SQL
+									</Paper>
+								</Grid>
+								<Grid item xs={4} sm={4} md={4}>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										GraphQL
+									</Paper>
+								</Grid>
+								<Grid item xs={4} sm={4} md={4}>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										WebSockets
+									</Paper>
+								</Grid>
+								<Grid item xs={4} sm={4} md={4}>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										NGINX
+									</Paper>
+								</Grid>
+							</Grid>
+							<Grid
+								item
+								xs={12}
+								sm={6}
+								md={4}
+								container
+								justify="center"
+								spacing={1}
+								className={classes.toolsGridItem}
+							>
+								<Grid item xs={12}>
+									<Typography
+										align="center"
+										className={
+											darkMode
+												? classes.techFEDark
+												: classes.techFE
+										}
+									>
+										Tools
+									</Typography>
+								</Grid>
+
+								<Grid item xs={4} sm={4} md={4}>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										VS Code
+									</Paper>
+								</Grid>
+								<Grid item xs={4} sm={4} md={4}>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										AWS
+									</Paper>
+								</Grid>
+								<Grid item xs={4} sm={4} md={4}>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										// className={classes.paper}
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										NPM
+									</Paper>
+								</Grid>
+								<Grid item xs={4} sm={4} md={4}>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										Git
+									</Paper>
+								</Grid>
+								<Grid item xs={4} sm={4} md={4}>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										GitHub
+									</Paper>
+								</Grid>
+								<Grid item xs={4} sm={4} md={4}>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										Jasmine
+									</Paper>
+								</Grid>
+								<Grid item xs={4} sm={4} md={4}>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										Mocha
+									</Paper>
+								</Grid>
+								<Grid item xs={4} sm={4} md={4}>
+									<Paper
+										elevation={2}
+										variant="outlined"
+										className={
+											darkMode
+												? classes.paperDark
+												: classes.paper
+										}
+									>
+										Webpack
+									</Paper>
+								</Grid>
+							</Grid>
+						</Grid>
+
+						<Grid
+							item
+							container
+							className={
+								darkMode
+									? classes.experienceBoxDark
+									: classes.experienceBox
+							}
+							justify="center"
+						>
+							<Grid item container justify="center">
+								<Grid item>
+									<Typography
+										variant="h4"
+										align="center"
+										className={
+											darkMode
+												? classes.experienceTitleDark
+												: classes.experienceTitle
+										}
+									>
+										Experience
+									</Typography>
+								</Grid>
+
+								<Grid
+									item
+									className={
+										darkMode
+											? classes.timeLineBoxEDark
+											: classes.timeLineBoxE
+									}
+								>
+									<Typography
+										variant="h6"
+										className={
+											darkMode
+												? `${classes.timeLineYearEDark} ${classes.timeLineItemEDark}`
+												: `${classes.timeLineYearE} ${classes.timeLineItemE}`
+										}
+									>
+										2020
+									</Typography>
+									<Box
+										component="div"
+										className={
+											darkMode
+												? classes.timeLineItemEDark
+												: classes.timeLineItemE
+										}
+									>
+										<Typography
+											variant="h5"
+											align="center"
+											className={
+												darkMode
+													? classes.subHeadingEDark
+													: classes.subHeadingE
+											}
+										>
+											Ton Ton Ramen & Yakitori
+										</Typography>
+										<Typography
+											variant="h6"
+											align="center"
+											className={
+												darkMode
+													? classes.subHeading2EDark
+													: classes.subHeading2E
+											}
+										>
+											Server
+										</Typography>
+										<Typography
+											variant="body1"
+											align="center"
+											className={
+												darkMode
+													? classes.locationEDark
+													: classes.locationE
+											}
+										>
+											Atlanta, GA
+										</Typography>
+
+										<Typography
+											variant="subtitle1"
+											align="left"
+											className={
+												darkMode
+													? classes.jobDescriptionDark
+													: classes.jobDescription
+											}
+										>
+											<div>
+												• Filled in as manager when
+												needed - responsibilities
+												included resolving customer
+												issues, entering shift reports,
+												and taking inventory
+											</div>
+											<div>
+												• Developed valuable soft
+												skills, which included
+												communication, teamwork,
+												multitasking, and working under
+												pressure
+											</div>
+											<div>
+												• Trained new hires and created
+												training materials along with a
+												checklist of server side-duties
+											</div>
+										</Typography>
+									</Box>
+									<Typography
+										variant="h6"
+										className={`${classes.timeLineYearE} ${classes.timeLineItemE}`}
+									>
+										2018
+									</Typography>
+									<Box
+										component="div"
+										className={classes.timeLineItemE}
+									>
+										<Typography
+											variant="h5"
+											align="center"
+											className={
+												darkMode
+													? classes.subHeadingEDark
+													: classes.subHeadingE
+											}
+										>
+											Elev8 Hire Solutions{" "}
+										</Typography>
+										<Typography
+											variant="h6"
+											align="center"
+											className={
+												darkMode
+													? classes.subHeading2EDark
+													: classes.subHeading2E
+											}
+										>
+											IT Recruiter
+										</Typography>
+										<Typography
+											variant="body1"
+											align="center"
+											className={
+												darkMode
+													? classes.locationEDark
+													: classes.locationE
+											}
+										>
+											Atlanta, GA
+										</Typography>
+
+										<Typography
+											variant="subtitle1"
+											align="left"
+											className={
+												darkMode
+													? classes.jobDescriptionDark
+													: classes.jobDescription
+											}
+										>
+											<div>
+												• Performed full sles recruiting
+												lifecycle - from prospecting,
+												job selling, screening, offer
+												negotiation, and onboarding
+											</div>
+											<div>
+												• Communicated with hiring
+												managers to discover project
+												requirements and ideal
+												candidates
+											</div>
+											<div>
+												• Maintained an accurate
+												candidate tracking system
+											</div>
+										</Typography>
+									</Box>
+								</Grid>
+							</Grid>
+							{/* </Box> */}
 						</Grid>
 						{/* </Box> */}
 					</Grid>
-					{/* </Box> */}
-				</Grid>
+				</Paper>
 			</Paper>
 		</ThemeProvider>
 	);
