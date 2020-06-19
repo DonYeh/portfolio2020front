@@ -17,6 +17,7 @@ import {
 	Paper,
 	Grid,
 	Card,
+	// Link,
 	// CssBaseline,
 } from "@material-ui/core";
 // import { FullscreenExit } from "@material-ui/icons";
@@ -193,7 +194,7 @@ export default function Portfolio({ darkMode }) {
 							<Grid item>
 								<Box className="proj1">
 									<Card className={classes.root} raised>
-										<CardActionArea>
+										<CardActionArea href="https://github.com/DonYeh/Portfolio-2020-full-stack">
 											<CardMedia
 												component="img"
 												alt="donaldyeh.dev"
@@ -264,7 +265,12 @@ export default function Portfolio({ darkMode }) {
 																classes.githubLink
 															}
 														>
+															{/* <Link
+																href="https://github.com/DonYeh/Portfolio-2020-full-stack"
+																onClick={preventDefault()}
+															> */}
 															Github
+															{/* </Link> */}
 														</Typography>
 													</Button>
 												</Grid>
@@ -277,7 +283,7 @@ export default function Portfolio({ darkMode }) {
 							<Grid item>
 								<Box className="proj2">
 									<Card className={classes.root} raised>
-										<CardActionArea>
+										<CardActionArea href="https://github.com/A-DiRusso/Chatris">
 											<CardMedia
 												component="img"
 												alt="puzzle blocks"
@@ -371,7 +377,7 @@ export default function Portfolio({ darkMode }) {
 										raised
 										// variant="outlined"
 									>
-										<CardActionArea>
+										<CardActionArea href="https://github.com/benhall847/movie-explorer">
 											<CardMedia
 												component="img"
 												alt="Movie Explorer gif"
