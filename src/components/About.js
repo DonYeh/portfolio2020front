@@ -62,11 +62,12 @@ const useStyles = makeStyles((theme, darkMode) => ({
 
 		// transform: "translateY(9vh)",
 		[theme.breakpoints.up("sm")]: {
-			height: "91vh",
-			marginTop: "9vh",
+			height: "95vh",
+			marginTop: "5vh",
 			padding: "5vh 0vw 0vh",
 		},
 		[theme.breakpoints.up("md")]: {
+			height: "96vh",
 			marginTop: "4vh",
 			padding: "2vh 4vw",
 		},
@@ -218,7 +219,7 @@ const useStyles = makeStyles((theme, darkMode) => ({
 	},
 	firstInnerGridItem: {},
 	innerPaper: {
-		padding: ".4em",
+		padding: ".4rem",
 		backgroundColor: "rgba(240, 249, 252, 0.8)",
 		// backgroundColor: darkMode
 		// 	? "rgba(121,121,121,.13)"
@@ -230,7 +231,7 @@ const useStyles = makeStyles((theme, darkMode) => ({
 		[theme.breakpoints.up("md")]: {},
 	},
 	innerPaperDark: {
-		padding: ".4em",
+		padding: ".4rem",
 		backgroundColor: "rgba(37, 41, 42, 0.8)",
 
 		[theme.breakpoints.up("sm")]: {},

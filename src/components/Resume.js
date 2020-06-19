@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
 			alignItems: "flex-end",
 		},
 		[theme.breakpoints.up("md")]: {
-			marginTop: "8.3vh", // minHeight: "8.5vh",
+			marginTop: "4.8vh", // minHeight: "8.5vh",
 		},
 	},
 
@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
 			alignItems: "flex-end",
 		},
 		[theme.breakpoints.up("md")]: {
-			marginTop: "8.3vh",
+			marginTop: "4.8vh",
 		},
 	},
 
