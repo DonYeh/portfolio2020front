@@ -522,10 +522,10 @@ function App(props) {
 											flex: 1,
 											display: "flex",
 											justifyContent: "flex-end",
-											backgroundColor: darkMode
-												? "rgb(23, 26, 27)"
-												: "rgb(185, 199, 202)",
-											// paddingRight: ".2vw",
+											// backgroundColor: darkMode
+											// 	? "rgba(20, 23, 23, 0.8)"
+											// 	: "rgb(185, 199, 202)",
+											// // paddingRight: ".2vw",
 										}}
 									>
 										{darkMode ? (
