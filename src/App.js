@@ -522,7 +522,9 @@ function App(props) {
 											flex: 1,
 											display: "flex",
 											justifyContent: "flex-end",
-											backgroundColor: "inherit",
+											backgroundColor: darkMode
+												? "rgb(23, 26, 27)"
+												: "rgb(185, 199, 202)",
 											// paddingRight: ".2vw",
 										}}
 									>
