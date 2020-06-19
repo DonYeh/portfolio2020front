@@ -55,26 +55,12 @@ const useStyles = makeStyles((theme) => ({
 	},
 	typedItem: {},
 	typedFont: {
-		// color: "white",
-		// color: "rgba(255,255,255, .81)", // dark mode
-		// color: "rgba(68,68,68, .86)", // dark mode
 		fontWeight: "bold",
 		color: "rgba(51, 51, 51, 0.9)",
-		// textShadow: "1px 1px rgb(20,33,61)", //dark blue
-		// no textShadow when in light mode
-		// textShadow: "1.5px 1.5px rgb(240,169,80)",
-
-		// marginTop: "10%",
-		// textAlign: "flex-start",
-		// backgroundColor: "blue"
 	},
 	mainPaper: {
 		height: "93vh",
-		// backgroundColor: "rgba(0,0,0,.2)", //dark
 		backgroundColor: "rgba(255,255,255,.55)", //dark
-
-		// backdropFilter: "blur(4px)",
-		// backgroundColor: "rgba(f,f,f,.5)",
 	},
 	mainPaperDark: {
 		height: "100vh",
@@ -82,46 +68,11 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-// const darkTheme = responsiveFontSizes(
-// 	createMuiTheme({
-// 		overrides: {
-// 			div: {
-// 				MuiPaper: {
-// 					root: {
-// 						backgroundColor: "purple",
-// 					},
-// 				},
-// 			},
-// 		},
-// 		palette: {
-// 			type: "dark",
-// 		},
-// 	})
-// );
-
-// let theme = createMuiTheme({
-// 	overrides: {
-// 		div: {
-// 			MuiPaper: {
-// 				root: {
-// 					backgroundColor: "purple",
-// 				},
-// 			},
-// 		},
-// 	},
-// });
-// theme = responsiveFontSizes(theme);
-// theme = responsiveFontSizes(darkTheme);
-
 const HomePage = ({ darkMode }) => {
 	const classes = useStyles();
 
-	// const [homeDarkMode, setAboutDarkMode] = useState(darkMode);
-
 	const mainPrimaryColor = darkMode ? orange[500] : lightBlue[500];
 	const mainSecondaryColor = darkMode ? deepOrange[900] : deepPurple[500];
-
-	// useEffect((darkMode) => setAboutDarkMode(darkMode), [darkMode]);
 
 	let darkTheme = responsiveFontSizes(
 		createMuiTheme({
@@ -152,8 +103,6 @@ const HomePage = ({ darkMode }) => {
 
 	return (
 		<ThemeProvider theme={darkTheme}>
-			{/* <ThemeProvider theme={theme}> */}
-
 			{/* <CssBaseline /> */}
 			{/* <StylesProvider injectFirst> */}
 			<Paper
@@ -182,7 +131,7 @@ const HomePage = ({ darkMode }) => {
 					>
 						<Grid item xs={12} className={classes.typedItem}>
 							<Typography
-								variant="h4"
+								variant="h3"
 								className={classes.typedFont}
 								style={{
 									color: darkMode
@@ -201,7 +150,7 @@ const HomePage = ({ darkMode }) => {
 						</Grid>
 						<Grid item xs={12} className={classes.typedItem}>
 							<Typography
-								variant="h4"
+								variant="h3"
 								className={classes.typedFont}
 								style={{
 									color: darkMode
@@ -226,7 +175,7 @@ const HomePage = ({ darkMode }) => {
 							className={classes.typedItem}
 						>
 							<Typography
-								variant="h4"
+								variant="h3"
 								className={classes.typedFont}
 								style={{
 									color: darkMode
@@ -263,7 +212,7 @@ const HomePage = ({ darkMode }) => {
 							className={classes.typedItem}
 						>
 							<Typography
-								variant="h4"
+								variant="h3"
 								className={classes.typedFont}
 								style={{
 									color: darkMode
@@ -287,7 +236,7 @@ const HomePage = ({ darkMode }) => {
 							className={classes.typedItem}
 						>
 							<Typography
-								variant="h4"
+								variant="h3"
 								className={classes.typedFont}
 								style={{
 									color: darkMode
@@ -298,7 +247,6 @@ const HomePage = ({ darkMode }) => {
 							>
 								<Typed
 									strings={[
-										// "Atlanta^1800",
 										"ATL^900",
 										"A-Town^900",
 										"the A^900",
@@ -315,7 +263,6 @@ const HomePage = ({ darkMode }) => {
 									fadeOut
 									loop
 									random
-									// smartBackspace="true"
 								/>
 							</Typography>
 						</Grid>
@@ -327,7 +274,7 @@ const HomePage = ({ darkMode }) => {
 							className={classes.typedItem}
 						>
 							<Typography
-								variant="h4"
+								variant="h3"
 								className={classes.typedFont}
 								style={{
 									color: darkMode
@@ -348,7 +295,6 @@ const HomePage = ({ darkMode }) => {
 					<Grid item xs={12} />
 				</Grid>
 			</Paper>
-			{/* </ThemeProvider> */}
 			{/* </StylesProvider> */}
 		</ThemeProvider>
 	);
