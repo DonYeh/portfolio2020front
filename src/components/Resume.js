@@ -33,8 +33,8 @@ import {
 } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
-	paperOverlay: { background: "rgba(222, 236, 240, 0.9)" },
-	paperOverlayDark: { background: "rgba(24, 26, 27, 0.9)" },
+	paperOverlay: { background: "rgba(222, 236, 240, 0.9)", height: "100%" },
+	paperOverlayDark: { background: "rgba(24, 26, 27, 0.9)", height: "100%" },
 
 	mainContainer: {
 		background: "rgba(255,255,255,.5)",
@@ -1708,10 +1708,11 @@ const Resume = ({ darkMode }) => {
 											}
 										>
 											<div>
-												• Performed full sles recruiting
-												lifecycle - from prospecting,
-												job selling, screening, offer
-												negotiation, and onboarding
+												• Performed full sales
+												recruiting lifecycle - from
+												prospecting, job selling,
+												screening, offer negotiation,
+												and onboarding
 											</div>
 											<div>
 												• Communicated with hiring
