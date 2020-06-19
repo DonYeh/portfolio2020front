@@ -608,9 +608,7 @@ const useStyles = makeStyles((theme) => ({
 		maxWidth: "4.5rem",
 		margin: "0 auto 0 1.5rem",
 		fontSize: "1.1rem",
-		background: "rgba(34, 51, 68, 0.3)",
-		// color: "rgba(34, 51, 68, 0.4)",
-
+		background: "rgb(182, 187, 189)",
 		color: "rgba(49, 49, 49, 0.47)",
 		lineHeight: 0.5,
 		padding: ".5rem",
