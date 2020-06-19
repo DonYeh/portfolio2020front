@@ -41,7 +41,8 @@ body {
 	background: url(./assets/Atlant.jpg) no-repeat center center fixed;
 	background-position: center center;
 	background-size: cover;
-	/* background-color: #282c34; */
+	background-attachment: fixed;
+
 	-moz-background: cover;
 	-o-background: cover;
 	-moz-background: cover;

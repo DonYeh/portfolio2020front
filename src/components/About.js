@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme, darkMode) => ({
 
 	mainPaper: {
 		// height: "100vh",
-		height: "100vh",
+		// height: "100vh",
 		// height: "calc(100%)",
 		// width: "100vw",
 		// height: "calc(100% + 56px)",
