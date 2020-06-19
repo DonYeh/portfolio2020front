@@ -36,6 +36,11 @@ const useStyles = makeStyles((theme) => ({
 	mainContainer: {
 		background: "#234darkMode ? classes.headingDark : ",
 	},
+	mainResumePaper: {
+		margin: "1.0vw 5vw 0vw",
+		[theme.breakpoints.up("sm")]: { margin: "1.0vw 10vw 0vw" },
+		[theme.breakpoints.up("md")]: {},
+	},
 	heading: {
 		color: "rgba(4, 78, 80, 0.8)",
 
@@ -65,12 +70,12 @@ const useStyles = makeStyles((theme) => ({
 
 		[theme.breakpoints.up("sm")]: {
 			padding: "1rem 0rem .5rem",
-			marginTop: "13.3vh",
+			marginTop: "4vh",
 
 			alignItems: "flex-end",
 		},
 		[theme.breakpoints.up("md")]: {
-			marginTop: "4.8vh", // minHeight: "8.5vh",
+			marginTop: "4vh", // minHeight: "8.5vh",
 		},
 	},
 
@@ -83,12 +88,12 @@ const useStyles = makeStyles((theme) => ({
 
 		[theme.breakpoints.up("sm")]: {
 			padding: "1rem 0rem .5rem",
-			marginTop: "13.3vh",
+			marginTop: "4vh",
 
 			alignItems: "flex-end",
 		},
 		[theme.breakpoints.up("md")]: {
-			marginTop: "4.8vh",
+			marginTop: "4vh",
 		},
 	},
 
@@ -182,7 +187,7 @@ const useStyles = makeStyles((theme) => ({
 			paddingBottom: ".5rem",
 			"&:before": {
 				transform: "translate(0px, 5.6rem)",
-				height: "41.2vh",
+				height: "45.2vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
 				maxHeight: "28%",
@@ -482,7 +487,7 @@ const useStyles = makeStyles((theme) => ({
 			},
 
 			[theme.breakpoints.up("md")]: {
-				height: "48vh",
+				height: "52vh",
 				left: "calc(50% - 1px)",
 				right: "auto",
 				maxHeight: "34%",
