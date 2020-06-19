@@ -364,8 +364,7 @@ function App(props) {
 							primary={menuIcon.listText}
 							style={{
 								color: darkMode
-									? // ? "rgba(137, 136, 136, 0.98)"
-									  "rgba(255, 153, 49, 0.8)"
+									? "rgba(193, 116, 37, 0.95)"
 									: "rgba(60, 60, 60, 0.85)",
 								// color: "aliceblue",
 								fontWeight: "bold",
