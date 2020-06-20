@@ -303,17 +303,8 @@ function App(props) {
 		setMobileOpen(!mobileOpen);
 	};
 
-	// const handleLightMode = () => {
-	// 	setThemeMode("light");
-	// };
-	// const handleDarkMode = () => {
-	// 	setThemeMode("dark");
-	// };
-
 	const drawerL = (
 		<div className={darkMode ? classes.leftDrawerDark : classes.leftDrawer}>
-			{/* <div className={classes.toolbar} /> */}
-			{/* <Divider /> */}
 			<div
 				className={
 					darkMode ? classes.drawerHeaderDark : classes.drawerHeader
@@ -323,11 +314,9 @@ function App(props) {
 					{darkTheme.direction === "ltr" ? (
 						<ChevronLeftIcon
 							style={{
-								// color: "sandybrown",
 								color: darkMode
 									? "rgba(236, 148, 90, 0.7)"
 									: "rgba(204, 108, 0, 0.9)",
-								// : "rgba(227, 136, 33, 0.85)",
 								width: "1em",
 								height: "1.2em",
 							}}
@@ -349,11 +338,9 @@ function App(props) {
 					>
 						<ListItemIcon
 							style={{
-								// color: "#5f9ea0c7",
 								color: darkMode
 									? "rgba(137, 136, 136, 0.5)"
-									: // : "rgba(102, 102, 102, 0.8)",
-									  "rgba(226, 120, 10, 0.8)",
+									: "rgba(226, 120, 10, 0.8)",
 
 								paddingLeft: "6px",
 							}}
@@ -378,12 +365,10 @@ function App(props) {
 	);
 
 	const drawerT = (
-		// <div>
 		<div className={darkMode ? classes.topDrawerDark : classes.topDrawer}>
 			<List
 				style={{
 					display: "flex",
-					// padding: "0 .5rem",
 				}}
 			>
 				{menuIcons.map((menuIcon, key) => (
@@ -420,8 +405,6 @@ function App(props) {
 						display: "flex",
 						justifyContent: "flex-end",
 						padding: "0rem .5rem",
-						// backgroundColor: "",
-						// paddingRight: ".2vw",
 					}}
 				>
 					{darkMode ? (
@@ -454,18 +437,12 @@ function App(props) {
 		window !== undefined ? () => window().document.body : undefined;
 
 	return (
-		// <div className="App">
 		<StylesProvider injectFirst>
 			<ThemeProvider theme={darkTheme}>
 				<CssBaseline />
 				<BrowserRouter>
-					{/* <div className={classes.root}> */}
 					<Paper className={classes.mainAppPaper}>
-						<AppBar
-							position="fixed"
-							className={classes.appBar}
-							// style={{ backgroundColor: "rgba(255,255,255,.9)" }}
-						>
+						<AppBar position="fixed" className={classes.appBar}>
 							<Toolbar
 								className={
 									darkMode
@@ -483,8 +460,6 @@ function App(props) {
 										color: darkMode
 											? "rgba(236, 148, 90, 0.7)"
 											: "rgba(227, 136, 33, 0.85)",
-										// color: "#e49059ed",
-										// color: "sandybrown",
 									}}
 								>
 									<MenuIcon />
@@ -512,8 +487,6 @@ function App(props) {
 										open
 										style={{
 											width: "100%",
-											// backgroundColor: "pink",
-											// // color: "rgba(0,0,0,.5)",
 										}}
 									>
 										{drawerT}
@@ -525,16 +498,11 @@ function App(props) {
 											flex: 1,
 											display: "flex",
 											justifyContent: "flex-end",
-											// backgroundColor: darkMode
-											// 	? "rgba(20, 23, 23, 0.8)"
-											// 	: "rgb(185, 199, 202)",
-											// // paddingRight: ".2vw",
 										}}
 									>
 										{darkMode ? (
 											<IconButton
 												color="inherit"
-												// backgroundColor="inherit"
 												onClick={() =>
 													setDarkMode(!darkMode)
 												}
@@ -548,7 +516,6 @@ function App(props) {
 										) : (
 											<IconButton
 												color="inherit"
-												// backgroundColor="inherit"
 												onClick={() =>
 													setDarkMode(!darkMode)
 												}
