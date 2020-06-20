@@ -18,19 +18,7 @@ import {
 import Button from "@material-ui/core/Button";
 import SaveIcon from "@material-ui/icons/Save";
 
-// import GetAppIcon from "@material-ui/icons/GetApp";
-
-import {
-	orange,
-	// lightBlue,
-	// deepPurple,
-	// deepOrange,
-	// greyBlue,
-	// green,
-	// lightGreen,
-	teal,
-	grey,
-} from "@material-ui/core/colors";
+import { orange, teal, grey } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
 	paperOverlay: { background: "rgba(222, 236, 240, 0.9)", height: "100%" },
@@ -833,7 +821,7 @@ const Resume = ({ darkMode }) => {
 						>
 							<Grid item style={{ paddingBottom: ".5rem" }}>
 								<Link
-									href="https://drive.google.com/open?id=1o9VgNvrVhskDqi76UCsFQiByLeDUv0BZ"
+									href="https://drive.google.com/file/d/1ve_T5mTcEv6hJ9vJhe-_GbhQW2Uk8VrE/view?usp=sharing"
 									// onClick={preventDefault}
 								>
 									<Button
